@@ -56,9 +56,9 @@
       }
     },
     computed: {
-      language() {
-        return this.languageTypeList['zh']
-      }
+        language() {
+          return this.languageTypeList['zh']
+        }
     },
     watch: {
       value(val) {

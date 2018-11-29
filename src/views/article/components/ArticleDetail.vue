@@ -30,7 +30,7 @@
                     <el-select v-model="postForm.userId" :remote-method="getRemoteUserList" filterable remote
                                placeholder="搜索用户">
                       <el-option v-for="item in userListOptions" :key="item.id" :label="item.realName"
-                                 :value="item.id"/>
+                                 :value="item.userId"/>
                     </el-select>
                   </el-form-item>
                 </el-col>
@@ -89,8 +89,8 @@
     sourceUrl: '', // 文章外链
     imgUrl: '', // 文章图片
     publishTime: undefined, // 前台展示时间
-    id: undefined,
-    allowComment: false,
+    essayId: undefined,
+    allowComment: 0,
     sort: 0,
     userName: '',
     userId: undefined
@@ -176,7 +176,7 @@
       },
       submitForm() {
         for (let item of this.userListOptions) {
-          if (item.id === this.postForm.userId) {
+          if (item.userId === this.postForm.userId) {
             this.postForm.userName = item.userName
             break;
           }

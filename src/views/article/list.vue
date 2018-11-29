@@ -2,9 +2,9 @@
   <div class="app-container">
 
     <el-table v-loading.body="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
-      <el-table-column align="center" label="ID" width="80">
+      <el-table-column align="center" label="ID" width="200">
         <template slot-scope="scope">
-          <span>{{ scope.row.id }}</span>
+          <span>{{ scope.row.essayId }}</span>
         </template>
       </el-table-column>
 
@@ -49,7 +49,7 @@
 
       <el-table-column align="center" label="操作" width="120">
         <template slot-scope="scope">
-          <router-link :to="'/article/edit/'+scope.row.id">
+          <router-link :to="'/article/edit/'+scope.row.essayId">
             <el-button type="primary" size="small" icon="el-icon-edit">Edit</el-button>
           </router-link>
         </template>

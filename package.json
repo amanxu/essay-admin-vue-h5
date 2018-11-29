@@ -2,7 +2,7 @@
   "name": "essay-admin-manager",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "悦心随笔",
+  "description": "文章管理",
   "author": "xiaoxu.wu <amanxu@126.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

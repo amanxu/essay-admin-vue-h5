@@ -25,9 +25,9 @@
       select-on-indeterminate
       style="width: 100%">
 
-      <el-table-column align="center" label="ID" min-width="40">
+      <el-table-column align="center" label="ID" min-width="200">
         <template scope="scope">
-          <span class="link-type">{{scope.row.id}}</span>
+          <span class="link-type">{{scope.row.userId}}</span>
         </template>
       </el-table-column>
       <el-table-column align="center" label="用户名" min-width="120">
@@ -171,7 +171,7 @@
         headers: {},
         modifyData: '',
         userForm: {
-          id: '', userName: '', realName: '', phone: null, userType: null, password: '', checkPass: ''
+          userId: '', userName: '', realName: '', phone: null, userType: null, password: '', checkPass: ''
         },
         rules: {
           userName: [{required: true, message: '请输入用户名', trigger: 'blur'}],
@@ -257,7 +257,7 @@
         });
       },
       userCreate() {
-        this.userForm = {id: '', userName: '', realName: '', phone: null, userType: null, password: '', checkPass: ''}
+        this.userForm = {userId: '', userName: '', realName: '', phone: null, userType: null, password: '', checkPass: ''}
         this.dialogFormVisible = true
         this.dialogStatus = 'create'
         this.$refs['userForm'].resetFields()
@@ -284,7 +284,7 @@
         })
       },
       userModify(row) { // 修改用户信息
-        detail(row.id).then(response => {
+        detail(row.userId).then(response => {
           const {code, data} = response
           if (code === 0) {
             this.userForm = data
@@ -314,7 +314,7 @@
         }).catch(reject => console.log(reject))
       },
       batchDelete(idx, row) {
-        batchDel(row.id).then(res => {
+        batchDel(row.userId).then(res => {
             const {code} = res
             if (code === 0) {
               this.$message({
